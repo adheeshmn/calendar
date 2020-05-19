@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+<div class="calnd-wrapper">
+
+<table>
+<tbody>
+	<tr class="calnd-head">
+		<td colspan="7">
+			<ul class="bttn-blk">
+				<li><a href="" id="nxt" >Next</a></li>
+				<li><a href="" id="yearMonth">
+					<span id="yr">2020</span>
+					<span class="mth">April</span>
+					</a>
+				</li>
+				<li><a href="" id="prev" onclick="prev()">Previous</a></li>
+			</ul>
+		</td>
+	</tr>
+
+</tbody>
+</table>
+
+
+<script>
+
+	function prev(){
+		let date = new Date();											//date object
+		let currentYear = date.getFullYear();                  			//2020
+			
+		let sp_CurnentYr = document.getElementById("yr").innerText;
+		let sp_PrvYr = sp_CurnentYr -1;
+		
+		let sp = document.getElementById("yr");
+			sp.textContent = (sp_PrvYr);
+	}	
+	
+
+</script>
+</div><!--calnd-wrapper ends-->
+
+
+
+</body>
+</html>
+<style>
+a{
+	text-decoration:none
+}
+.calnd-wrapper table{
+	border-collapse:collapse;
+	font-family:arial;
+	font-size:11px;
+	text-align:center	
+	}
+.calnd-wrapper table tr.head-row td{
+	background-color:#e3e3e3;
+	font-weight:600
+}
+.calnd-wrapper table tr.head-row td.hldy{
+	color:#f44336
+}
+.calnd-wrapper table tr td{
+	border:1px solid #ccc;
+	padding:10px;
+}
+
+.calnd-head ul{
+	list-style:none;
+	display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+	padding: 0;
+    margin: 0;
+}
+.bttn-blk li{
+	padding:5px;
+	border:1px solid #b3b3b3;
+	border-radius:4px;
+	background-color:#fff;
+	cursor:pointer
+}
+.bttn-blk li:hover{
+	background-color:#e3e3e3;
+	box-shadow:2px 2px 4px 2px #cccccc50;	
+}
+
+</style>
